@@ -19,7 +19,7 @@ const App = () => {
   const addToSavedList = movie => {
     setSavedList([...savedList, movie]);
   };
-
+  
   return (
     <>
       <SavedList list={savedList} />

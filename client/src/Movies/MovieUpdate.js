@@ -20,6 +20,13 @@ const initialItem = {
     setItem({...item,[e.target.name]: e.target.value});
   };
 
+const handleStars = e => {
+    setItem({
+        ...item,
+        stars: [e.target.value]
+    })
+}
+
   useEffect(() => {
       console.log('useEffect props', props.items)
     const itemToUpdate = props.items.find(thing => `${thing.id}` === id);
@@ -80,7 +87,7 @@ console.log('this is itemtoUpdate', itemToUpdate)
           />
           <div className="baseline" />
   
-         <MovieStars item={item.stars} />
+         <MovieStars item={item.stars} handleStars={handleStars}/>
 
           <div className="baseline" />
   

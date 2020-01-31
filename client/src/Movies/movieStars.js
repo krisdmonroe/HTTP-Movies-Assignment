@@ -5,14 +5,8 @@ import { useParams } from 'react-router-dom';
 
 
  const MovieStars = (props) => {
-    const [item, setItem] = useState()
 
-    const handleChange = e => {
-        setItem({...item,[e.target.name]: e.target.value});
-      };
-    
       console.log('this is movieStars', props)
-     console.log(item)
     return (
        <div>
           {props.item.map(star =>
@@ -20,7 +14,7 @@ import { useParams } from 'react-router-dom';
             type="text"
             name="stars"
             placeholder={star}
-            onChange={handleChange}
+            onChange={props.handleStars}
             value={props.item.stars}
           />
           )}
